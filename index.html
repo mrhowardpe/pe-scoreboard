@@ -236,6 +236,15 @@ body { margin:0; font-family:'Bangers', cursive; background:black; color:white; 
   }
 </style>
 
+<style>
+/* Injected: force Spotify ⏯ icon to black on iPad/iOS */
+#spotifyTogglePlay, #spotifyTogglePlay * {
+  color: #000 !important;
+  -webkit-text-fill-color: #000 !important;
+  fill: #000 !important;
+}
+#spotifyTogglePlay svg { display: block; margin: 0 auto; }
+</style>
 </head>
 <body id="body">
 <audio id="buzzer" src="buzzer.mp3" preload="auto"></audio>
@@ -320,7 +329,13 @@ body { margin:0; font-family:'Bangers', cursive; background:black; color:white; 
       <button id="preset120">2 Min</button>
       <button id="preset180">3 Min</button>
       <button id="preset300">5 Min</button>
-      <button id="spotifyTogglePlay" aria-label="Spotify Play/Pause">⏯</button>
+      <button id="spotifyTogglePlay" aria-label="Spotify Play/Pause"><svg aria-hidden="true" viewBox="0 0 24 24" width="22" height="22" focusable="false">
+  <!-- Play triangle -->
+  <polygon points="3,4 12,12 3,20" fill="#000"/>
+  <!-- Pause bars -->
+  <rect x="14" y="4" width="3.5" height="16" fill="#000"/>
+  <rect x="18.5" y="4" width="3.5" height="16" fill="#000"/>
+</svg></button>
     </div>
     </div>
   </div>
